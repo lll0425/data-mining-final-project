@@ -37,4 +37,9 @@ class AutoLinearPolicy:
         self.high = high
 
     def __call__(self, iteration):
+        # 原本(normal)
         return (iteration / (self.iterations - 1)) * (self.high - self.low) + self.low
+        # 慢-->快(try1)
+        # return self.linspace[iteration] * (self.high - self.low) + self.low
+        # 快-->慢(try2)
+        # return self.linspace2[iteration] * (self.high - self.low) + self.low
